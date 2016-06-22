@@ -3,27 +3,35 @@
 #end
 
 def welcome
-  puts "To make a new list, press 1. To exit, press q."
+  puts "To make a new list, press a. To exit, press q."
   puts "> "
-  return gets.chomp
 end
 
-def new_list
+def get_input
   gets.chomp
 end
 
+def new_list
+  count = 0
+  get_input
+  count + 1
+end
+
 class List
-  welcome
 
-  loop do
-    if new_list == "1"
-
-    elsif new_list.to_i == "0"
-      break
-    else
-      puts "Sorry, I don't understand. #{welcome}"
+  def run
+      welcome
+      loop do
+        puts "Press a to add, q to quit."
+        gi = get_input
+      if gi == "q"
+        break
+      elsif gi == "a"
+          puts "- "
+          new_list
+      end
     end
   end
 end
 
-List.new
+List.new.run
