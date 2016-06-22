@@ -3,8 +3,7 @@
 #end
 
 def welcome
-  puts "To make a new list, press a. To exit, press q."
-  puts "> "
+  puts "Make Your To-Do List"
 end
 
 def get_input
@@ -12,23 +11,25 @@ def get_input
 end
 
 def new_list
-  count = 0
   get_input
-  count + 1
 end
+
+
 
 class List
 
   def run
       welcome
       loop do
-        puts "Press a to add, q to quit."
+        puts "Press 1 to add, 2 to quit, 3 to mark as complete."
         gi = get_input
-      if gi == "q"
+      if gi == "2"
         break
-      elsif gi == "a"
+      elsif gi == "1"
           puts "- "
           new_list
+        elsif gi == "3"
+
       end
     end
   end
