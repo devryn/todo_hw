@@ -1,7 +1,6 @@
-#File.open("todo.txt", "w") do |todo|
-#  todo.write("#/n|Description/n|Done?")
-#end
-
+File.open("todo.txt", "w") do |todo|
+  todo.write("#/n|Description/n|Done?")
+end
 
 def welcome
   puts "Make Your To-Do List"
@@ -12,7 +11,6 @@ def get_input
 end
 
 class List
-
 
   def incomplete
     puts "To-Do: "
@@ -42,13 +40,11 @@ class List
           puts "- "
           @items.push(get_input)
         elsif gi == "3"
-          puts "Which item?"
+          puts "Which item number?"
           item_index = get_input.to_i
           completed_item = @items[item_index]
           @items.delete_at(item_index)
           @completed_items.push(completed_item)
-        #else
-        #  puts "Enter a command: 1, 2, or 3."
       end
     end
   end
